@@ -11,7 +11,7 @@ import Faqs from "./Pages/FAQs/Faqs";
 import Users from "./Pages/Users/Users";
 import UsersPage from "./Pages/UserPage/UserPage";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-
+import LogInPage from './Pages/Login/Login'
 
 const initialState = { toggle: false, sideBarToggle: false };
 
@@ -50,6 +50,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Products />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/login" element={<LogInPage />} />
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/users" element={<Users />} />
           <Route path="users/:id/" element={<UsersPage />} />
