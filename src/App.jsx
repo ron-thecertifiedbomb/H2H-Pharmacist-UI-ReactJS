@@ -11,7 +11,8 @@ import Faqs from "./Pages/FAQs/Faqs";
 import Users from "./Pages/Users/Users";
 import UsersPage from "./Pages/UserPage/UserPage";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import LogInPage from './Pages/Login/Login'
+import LogInPage from './Pages/LoginPage/LoginPage'
+
 
 const initialState = { toggle: false, sideBarToggle: false };
 
@@ -45,9 +46,9 @@ const App = () => {
       <UserContext.Provider
         value={{ toggleArrow, setToggleArrow, state, dispatch }}
       >
+<LogInPage />
 
-
-        <section className="nav-bar-section">
+        {/* <section className="nav-bar-section">
           <NavBar />
         </section>
         <SideBar />
@@ -60,7 +61,7 @@ const App = () => {
           <Route path="/users" element={<Users />} />
           <Route path="users/:id/" element={<UsersPage />} />
           <Route path="product/:id/" element={<ProductDetail />} />
-        </Routes>
+        </Routes> */}
 
         
       </UserContext.Provider>
