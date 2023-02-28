@@ -34,14 +34,19 @@ const reducer = (state, action) => {
 };
 
 const App = () => {
+
+
   const [state, dispatch] = useReducer(reducer, initialState);
   const [toggleArrow, setToggleArrow] = useState("");
 
   return (
+
     <div className="App">
       <UserContext.Provider
         value={{ toggleArrow, setToggleArrow, state, dispatch }}
       >
+
+
         <section className="nav-bar-section">
           <NavBar />
         </section>
@@ -56,8 +61,12 @@ const App = () => {
           <Route path="users/:id/" element={<UsersPage />} />
           <Route path="product/:id/" element={<ProductDetail />} />
         </Routes>
+
+        
       </UserContext.Provider>
     </div>
+
+
   );
 };
 

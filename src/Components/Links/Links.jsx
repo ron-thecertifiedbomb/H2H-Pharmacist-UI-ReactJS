@@ -9,11 +9,12 @@ const Links = () => {
   return (
     <section>
       {navlinks.map((item, index) => (
-        
         <div className="list_container" key={index}>
-          <div className="list_heading"> 
+          <div className="list_heading">
             <div
-              className={state.toggleArrow === item.name ? "arrow" : "arrow_toggle"}
+              className={
+                state.toggleArrow === item.name ? "arrow" : "arrow_toggle"
+              }
               onClick={
                 state.toggleArrow === item.name
                   ? () => state.setToggleArrow(null)
@@ -27,8 +28,8 @@ const Links = () => {
               <p>{item.name}</p>
             </div>
 
-            <div className={item.order > 0 ? "order-count" : ''}>
-            <p>{item.order}</p>
+            <div className={item.order > 0 ? "order-count" : ""}>
+              <p>{item.order}</p>
             </div>
           </div>
 
@@ -38,20 +39,26 @@ const Links = () => {
             }
           >
             <div className="list_body_content">
+              <NavLink to={item.linkOne}>
+                <p onClick={() => state.dispatch({ type: "off" })}>
+                  {item.linkOneName}
+                </p>
+              </NavLink>
 
-              <NavLink to={item.linkOne}><p onClick={() => state.dispatch({ type: 'off'})}>{item.linkOneName}</p></NavLink>
-              
-              <NavLink to={item.linkTwo}><p onClick={() => state.dispatch({ type: 'off'})}>{item.linkTwoName}</p></NavLink>
-
-              <p onClick={() => state.dispatch({ type: 'off'})}>{item.linkThree}</p>
+              <NavLink to={item.linkTwo}>
+                <p onClick={() => state.dispatch({ type: "off" })}>
+                  {item.linkTwoName}
+                </p>
+              </NavLink>
+              <NavLink to={item.linkThree}>
+                <p onClick={() => state.dispatch({ type: "off" })}>
+                  {item.linkThreeName}
+                </p>
+              </NavLink>
             </div>
           </div>
-          
         </div>
-
       ))}
-
-
     </section>
   );
 };
