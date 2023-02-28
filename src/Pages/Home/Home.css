@@ -1,0 +1,16 @@
+.section_home {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;  
+}
+
+button {
+    margin: 1rem;
+}
+
+p {
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+
+/* SideBar main container */
+
+.side_bar_container {
+  position: absolute;
+  display: none;;
+  flex-direction: column;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  color: white;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 10px;    
+}
+
+.side_bar_logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.profiler-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+
+.side_container_links {
+display: flex;
+padding: 1rem 1rem 1rem 1.5rem;
+}
+
+
+/* outside ciick */
+
+/* .outside-click {
+  display: none;
+} */
+
+
+/* media queries */
+
+@media only screen and (max-width: 765px) {
+  .side_bar_container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    left: -400px;
+    top: 0px;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .show_bar {
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+
+}

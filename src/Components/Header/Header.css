@@ -1,0 +1,8 @@
+.main_header_containter {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

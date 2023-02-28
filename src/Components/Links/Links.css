@@ -1,0 +1,147 @@
+section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: grey;
+}
+
+.list_container {
+  padding: 2px;
+  
+}
+
+/* List Heading */
+
+.list_heading {
+  display: flex;
+  gap: 0.5rem;
+  padding: 8px;
+  
+}
+
+
+.list_heading:hover {
+  background-color: rgb(145, 143, 143);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+ 
+  transition: 0.3s;
+  cursor: pointer;
+  rotate: 180deg;
+}
+
+.arrow_toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  rotate: 0deg;
+  transition: 0.3s;
+  cursor: pointer;
+  
+}
+
+.title_name {
+  display: flex;
+  padding-left: 1rem;
+}
+
+.order-count  {
+  background-color: #FA7A22;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  margin-top: 2px;
+  color: white;
+}
+
+
+.order-count p {
+ font-size: 11px;
+}
+
+
+/* List Body */
+
+
+.list_body_content {
+   width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  
+}
+
+.list_body_content, p {
+ cursor: pointer;
+ padding: 2px;
+
+
+
+}
+
+
+.list_body {
+  display: flex;
+  width: 100%;
+  height: 0px;
+  justify-content: start;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+  opacity: 0;
+  padding-left: 3rem;
+}
+
+.list_body_show {
+  display: flex;
+  height: 80px;
+  justify-content: start;
+  transition: 0.3s;
+  transition-timing-function: ease-in;
+  opacity: 1;
+  width: 100%;
+  padding-left: 3rem;
+}
+
+
+
+@media only screen and (max-width: 765px) {
+  .order-count  {
+    background-color: #FA7A22;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+    margin-top: 2px;
+    color: white;
+  }
+
+  .order-count p {
+    font-size: 11px;
+   }
+  
+
+
+}
+

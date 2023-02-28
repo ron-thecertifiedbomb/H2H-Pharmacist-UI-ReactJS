@@ -1,0 +1,201 @@
+/* NaBar */
+
+nav {
+  display: flex;
+  max-width: 1400px;
+  height: 70px;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #cccccc;
+  position: relative;
+  background-color: white;
+}
+
+.hamburger_left_container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-right: 5px;
+  color: grey;
+  cursor: pointer;
+}
+
+.nav-logo {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.logo-title {
+  color: aqua;
+  margin-top: 3px;
+}
+
+
+.profile-column {
+  display: flex;
+  justify-content: end;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+}
+
+.log-in-wrapper {
+  display: block;
+}
+
+.log-name {
+  color: black;
+  text-align: end;
+  font-size: 14px;
+}
+.log-id {
+  color: grey;
+  text-align: end;
+  font-size: 14px;
+}
+
+.logo-title {
+  display: block;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.profile-round {
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  border: 1px solid grey;
+  padding: 2px;
+}
+
+.pic-round {
+  width: 100%;
+  height: 100%;
+  background-color: #cccccc;
+  border-radius: 50px;
+}
+
+
+
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+  color: grey;
+}
+
+/* NavBar Panel */
+
+.nav-links-container {
+  display: block;
+  width: 280px;
+  min-height: 500px;
+  position: absolute;
+  top: -600px;
+  right: 0px;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+  border: 1px solid #cccccc;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.show {
+  top: 60px;
+  transition: 0.3s;
+  opacity: 1;
+  transition-timing-function: ease-in;
+}
+
+
+
+/* NavBar leftPanel */
+
+.navbar_left_panel {
+  width: 300px;
+  height: 100vh;
+  background-color: aqua;
+  position: absolute;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 765px) {
+  /* .hamburger {
+    display: block;
+  } */
+
+  .log-in-wrapper {
+    display: none;
+  }
+
+  .profile-round {
+    display: none;
+  }
+
+  .logo-title {
+    display: none;
+  }
+
+  .nav-links-container {
+    display: block;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .hamburger{
+    display: none;
+  }
+   
+}
+
+
+@media only screen and (max-width: 400px) {
+  .hamburger{
+    display: none;
+  }
+  
+  
+  img {
+    width: 150px;
+  }
+
+
+  .profile-column {
+    display: none;
+   
+  }
+
+  .login-column {
+    gap: 0.5rem;
+  }
+
+  .hamburger_left_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-right: 5px;
+    color: grey;
+  }
+
+ 
+}

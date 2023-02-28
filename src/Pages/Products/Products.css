@@ -1,0 +1,17 @@
+.products_section {
+   
+    min-height: 100vh;
+ 
+}
+
+
+.products_container  {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 2rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
