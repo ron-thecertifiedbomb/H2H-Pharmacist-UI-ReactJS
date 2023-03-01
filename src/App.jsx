@@ -19,8 +19,9 @@ const initialState = { toggle: false, sideBarToggle: false, isLoggedIn: false };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "setIsLoggedIn":
-      return { toggle: true };
+
+    case "isLoggedIn":
+      return { isLoggedIn: true };
 
     case "toggle":
       return { toggle: !state.toggle };
@@ -45,7 +46,7 @@ const App = () => {
   return (
     <div className="App">
       <UserContext.Provider
-        value={{ toggleArrow, setToggleArrow, state, dispatch }}
+        value={{ toggleArrow, setToggleArrow, isLoggedIn, setIsLoggedIn, state, dispatch }}
       >
         {isLoggedIn ? (
            <>
@@ -66,7 +67,7 @@ const App = () => {
          </>
          
         ) : (
-          <LogInPage />
+          <LogInPage/>
         )}
       </UserContext.Provider>
     </div>
