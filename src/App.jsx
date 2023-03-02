@@ -41,7 +41,7 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [toggleArrow, setToggleArrow] = useState("");
   
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <div className="App">
@@ -60,8 +60,8 @@ const App = () => {
              <Route path="/aboutus" element={<AboutUs />} />
              <Route path="/login" element={<LogInPage />} />
              <Route path="/faqs" element={<Faqs />} />
-             <Route path="/users" element={<Users />} />
-             <Route path="users/:id/" element={<UsersPage />} />
+             {/* <Route path="/users" element={<Users />} /> */}
+             {/* <Route path="users/:id/" element={<UsersPage />} /> */}
              <Route path="product/:id/" element={<ProductDetail />} />
            </Routes>
          </>

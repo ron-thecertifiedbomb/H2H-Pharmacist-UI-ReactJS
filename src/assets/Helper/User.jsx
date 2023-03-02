@@ -1,4 +1,4 @@
- const users = [
+export const users = [
     {
         id: '0',
         name: 'Jane Smith',
@@ -29,9 +29,7 @@
         price: '500'
     },
  
-]
-
-
+];
 
 
 export default users;

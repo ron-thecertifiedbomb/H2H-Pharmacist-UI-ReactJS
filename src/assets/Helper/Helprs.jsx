@@ -49,11 +49,11 @@ export const navlinks = [
     arrow: arrow,
     linkOneName: "Products",
     linkTwoName: "Home",
-    linkThreeName: "Login",
+    linkThreeName: "Table",
     to: "product",
     linkOne: 'product',
     linkTwo: '/',
-    linkThree: 'login',
+    linkThree: 'faqs',
   },
   {
     id: 5,
