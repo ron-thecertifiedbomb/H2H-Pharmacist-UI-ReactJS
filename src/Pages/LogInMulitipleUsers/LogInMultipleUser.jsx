@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
 import "./LogInMultipleUsers.css";
 import { UserContext } from "../../assets/UserContext/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const users = [
   {
     id: 1,
-    name: 'Joe Satriani',
+    name: "Joe Satriani",
     username: "satch",
     employeeIdNo: 126574,
     password: "password123",
@@ -13,7 +14,7 @@ const users = [
   },
   {
     id: 2,
-    name: 'Ronan Sibunga',
+    name: "Ronan Sibunga",
     username: "ron",
     employeeIdNo: 1980,
     password: "1234",
@@ -41,12 +42,12 @@ const users = [
     username: "The Answer",
     employeeIdNo: 1977,
     password: "1234567",
-    activeUser: false
-  }
+    activeUser: false,
+  },
 ];
 
-
 function LoginFormMulitple() {
+  const navigate = useNavigate();
 
   const state = useContext(UserContext);
   const [username, setUsername] = useState("");
@@ -61,7 +62,7 @@ function LoginFormMulitple() {
 
     if (user) {
       state.setIsLoggedIn(true);
-      
+      navigate("/");
       let loggedinUser = [user.name, user.employeeIdNo];
       state.setActiveUser(loggedinUser);
       // state.dispatch({ type: 'isLoggedIn'})
@@ -71,7 +72,6 @@ function LoginFormMulitple() {
   }
 
   return (
-
     <form onSubmit={handleLogin}>
       <label>
         Username:
@@ -96,9 +96,7 @@ function LoginFormMulitple() {
   );
 }
 
-
 const LogInMultipleUser = () => {
- 
   return (
     <div className="main-container_users">
       <LoginFormMulitple />

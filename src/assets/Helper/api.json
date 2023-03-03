@@ -13,12 +13,6 @@
       "price": "20"
     },
     {
-      "id": 1677826005312,
-      "name": "Biogesic",
-      "generic": "paracetamol",
-      "price": "12"
-    },
-    {
       "id": 1677826043848,
       "name": "Alaxan",
       "generic": "Ibprofen",
@@ -33,8 +27,14 @@
     {
       "id": 1677826364988,
       "name": "Neozep",
-      "generic": "Tablets",
-      "price": "12"
+      "generic": "Cough",
+      "price": "80"
+    },
+    {
+      "id": 1677826769968,
+      "name": "Declofenac",
+      "generic": "Pain Reliever",
+      "price": "34"
     }
   ],
   "users": [
