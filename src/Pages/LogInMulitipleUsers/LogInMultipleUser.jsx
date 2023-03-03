@@ -47,8 +47,8 @@ const users = [
 ];
 
 function LoginFormMulitple() {
+  
   const navigate = useNavigate();
-
   const state = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
