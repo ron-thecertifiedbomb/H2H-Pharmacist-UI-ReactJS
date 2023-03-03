@@ -1,16 +1,34 @@
 {
   "products": [
     {
-      "id": 1677807521602,
-      "name": "Biogesic",
-      "generic": "Paracetamol",
+      "id": 1677821822906,
+      "name": "Medicol",
+      "generic": "Ibuprofen",
       "price": "15"
     },
     {
-      "id": 1677807533114,
-      "name": "Advil",
-      "generic": "Ibuprofen",
-      "price": "19"
+      "id": 1677821999287,
+      "name": "Febox",
+      "generic": "Gout",
+      "price": "20"
+    },
+    {
+      "id": 1677826005312,
+      "name": "Biogesic",
+      "generic": "paracetamol",
+      "price": "12"
+    },
+    {
+      "id": 1677826043848,
+      "name": "Alaxan",
+      "generic": "Ibprofen",
+      "price": "34"
+    },
+    {
+      "id": 1677826052368,
+      "name": "Amoxcicilin",
+      "generic": "Amox",
+      "price": "15"
     }
   ],
   "users": [
@@ -53,10 +71,6 @@
       "employeeIdNo": 1977,
       "password": "1234567",
       "activeUser": false
-    },
-    {
-      "query": "\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ",
-      "id": 6
     }
   ]
 }
