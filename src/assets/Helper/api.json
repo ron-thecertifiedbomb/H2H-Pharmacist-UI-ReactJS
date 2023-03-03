@@ -29,6 +29,12 @@
       "name": "Amoxcicilin",
       "generic": "Amox",
       "price": "15"
+    },
+    {
+      "id": 1677826364988,
+      "name": "Neozep",
+      "generic": "Tablets",
+      "price": "12"
     }
   ],
   "users": [
