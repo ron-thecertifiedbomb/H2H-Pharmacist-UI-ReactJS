@@ -9,9 +9,10 @@ const Table = () => {
   const [newGeneric, setNewGenric] = useState("");
   const [newPrice, setNewPrice] = useState("");
   const [products, setProducts] = useState([]);
-
-  const [_________, setSelectedItemId] = useState(null);
-
+  const [selectedItemId, setSelectedItemId] = useState([]);
+  const [form, setForm] = useState(false);
+ 
+  
   // GET METHOD
 
   const fetchProducts = async () => {
@@ -22,7 +23,7 @@ const Table = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [selectedItemId]);
 
   // POST METHOD
 
@@ -58,7 +59,54 @@ const Table = () => {
     setNewPrice("");
   };
 
+
+// // PATCH METHOD
+
+const handleUpdate = (itemId) => {
+  setSelectedItemId(itemId);
+  setForm(true)
+  console.log(itemId)  
+
+
+
+
+}
+
+const UpdateProduct = (itemId) => {
+  setSelectedItemId(itemId);
+  setForm(false)
+  updateProduct(itemId)
   
+}
+
+const updateProduct = () => {
+  
+  const id = selectedItemId;
+  const updateProduct = {
+    name: newNameProduct,
+    generic: newGeneric,
+    price: newPrice,
+  };
+  
+  fetch(`http://localhost:3000/products/${id}`, {
+
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(
+      updateProduct
+    ),
+  })
+  .then(() => {
+    alert('Successfully Updated Item')
+    setNewProductName("");
+    setNewGenric("");
+    setNewPrice("");
+  })
+  .catch((error) => console.error(error));  
+}
+
   // DELETE METHOD
 
   const handleItemClick = (itemId) => {
@@ -105,6 +153,7 @@ const Table = () => {
               <th scope="col">Generic Name</th>
               <th scope="col">Price</th>
               <th scope="col">Delete Product</th>
+              <th scope="col">Update Product</th>
             </tr>
           </thead>
 
@@ -121,7 +170,16 @@ const Table = () => {
                     <div
                       className="delete_button"
                     >
-                      Delete
+                      <p>Delete</p>
+                    </div>
+                  </div>
+                </td>
+                <td data-label="Update Product" id="update">
+                  <div className="button_container"  onClick={() => handleUpdate(item.id, item.name, item.title)}>
+                    <div
+                      className="update_button"
+                    >
+                   <p>Update</p>
                     </div>
                   </div>
                 </td>
@@ -157,6 +215,34 @@ const Table = () => {
         <button>Add Item</button>
       </form>
 
+<div className={form ? "form-overlay show_form" : "form-overlay"}>
+
+<div className ="form" id="update">
+        <input
+          type="text"
+          placeholder='Product Name'
+          required
+          value={newNameProduct}
+          onChange={(e) => setNewProductName(e.target.value)}
+        />
+
+        <input
+          type="text"
+          placeholder="Generic Name"
+          required
+          value={newGeneric}
+          onChange={(e) => setNewGenric(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Price"
+          required
+          value={newPrice}
+          onChange={(e) => setNewPrice(e.target.value)}
+        />
+        <button onClick={UpdateProduct}>Update Item</button>
+      </div>
+</div>
     </div>
   );
 };
