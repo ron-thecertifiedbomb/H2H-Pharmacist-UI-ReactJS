@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import imageOne from "../../assets/img/apple-touch-icon.png";
 import "./LoginForm.css";
+import { UserContext } from "../../assets/UserContext/UserContext";
 
-function Login({ setIsLoggedIn, warning, setWarning }) {
+import { useNavigate } from "react-router-dom";
+
+function Login({ warning, setWarning }) {
   
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const state = useContext(UserContext);
 
   const handleLogin = () => {
    
     {
       username === "Ronan" && password === "#1234"
-        ? setIsLoggedIn(true)
-        : setIsLoggedIn(false);
+        ? state.setIsLoggedIn(true)
+        : state.setIsLoggedIn(false);
     }
     {
       username === "Ronan" ? console.log("") : setWarning("Invalid Username");
@@ -45,6 +51,7 @@ function Login({ setIsLoggedIn, warning, setWarning }) {
     setPassword("");
     console.log(username.length);
     console.log(password.length);
+    navigate("/")
   };
 
   return (
@@ -79,42 +86,18 @@ function Login({ setIsLoggedIn, warning, setWarning }) {
   );
 }
 
-function Logout({ setIsLoggedIn, warning, setWarning }) {
-  const handleLogout = () => {
-    console.log("Logged out");
-    setIsLoggedIn(false);
-    setWarning("");
-  };
-
-  return (
-    <div className="container">
-      <p>{warning}</p>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
-  );
-}
-
-
 
 function LogInForm() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+ 
   const [warning, setWarning] = useState("");
-
+  
   return (
     <div>
-      {isLoggedIn ? (
-        <Logout
-          setIsLoggedIn={setIsLoggedIn}
-          warning={warning}
-          setWarning={setWarning}
-        />
-      ) : (
         <Login
-          setIsLoggedIn={setIsLoggedIn}
           warning={warning}
           setWarning={setWarning}
         />
-      )}
+    
     </div>
   );
 }

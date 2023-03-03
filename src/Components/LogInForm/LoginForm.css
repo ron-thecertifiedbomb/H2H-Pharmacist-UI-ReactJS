@@ -47,6 +47,7 @@ button {
     border-radius: 20px;
     background-color: #FA7419;
     border: none;
+    color: white;
 }
 
 .warning {

@@ -1,0 +1,15 @@
+.logout {
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #FA7419;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.button_container {
+    display: flex;
+    justify-content: end;
+}

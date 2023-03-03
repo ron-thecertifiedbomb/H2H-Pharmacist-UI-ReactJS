@@ -1,8 +1,34 @@
 .main_header_containter {
     height: 100px;
-    width: 400px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
+
+
+
+
+  
+@media screen and (max-width: 599px) {
+
+    h1 {
+      font-size: 18px;
+         
+    }
+
+  }
+  
+
+    
+  @media screen and (max-width: 390px) {
+
+  
+    h1 {
+        font-size: 15   px;
+           
+      }
+
+  }
+  

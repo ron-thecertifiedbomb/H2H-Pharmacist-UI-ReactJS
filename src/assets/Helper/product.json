@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": 1677721767571,
+      "name": "sd",
+      "generic": "dasd",
+      "price": "asdsa"
+    },
+    {
+      "id": 1677721808574,
+      "name": "asd",
+      "generic": "asd",
+      "price": "sad"
+    }
+  ]
+}

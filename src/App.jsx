@@ -11,14 +11,18 @@ import Faqs from "./Pages/FAQs/Faqs";
 import Users from "./Pages/Users/Users";
 import UsersPage from "./Pages/UserPage/UserPage";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import LogInPage from './Pages/Login/Login'
+import LogInPage from "./Pages/LoginPage/LoginPage";
 
-const initialState = { toggle: false, sideBarToggle: false };
+const initialState = { toggle: false, sideBarToggle: false, isLoggedIn: false };
 
 // The reducer function
 
 const reducer = (state, action) => {
   switch (action.type) {
+
+    case "isLoggedIn":
+      return { isLoggedIn: true };
+
     case "toggle":
       return { toggle: !state.toggle };
 
@@ -34,39 +38,39 @@ const reducer = (state, action) => {
 };
 
 const App = () => {
-
-
   const [state, dispatch] = useReducer(reducer, initialState);
   const [toggleArrow, setToggleArrow] = useState("");
+  
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
-
     <div className="App">
       <UserContext.Provider
-        value={{ toggleArrow, setToggleArrow, state, dispatch }}
+        value={{ toggleArrow, setToggleArrow, isLoggedIn, setIsLoggedIn, state, dispatch }}
       >
-
-
-        <section className="nav-bar-section">
-          <NavBar />
-        </section>
-        <SideBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Products />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/login" element={<LogInPage />} />
-          <Route path="/faqs" element={<Faqs />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="users/:id/" element={<UsersPage />} />
-          <Route path="product/:id/" element={<ProductDetail />} />
-        </Routes>
-
-        
+        {isLoggedIn ? (
+           <>
+           <section className="nav-bar-section">
+             <NavBar />
+           </section>
+           <SideBar />
+           <Routes>
+             <Route path="/" element={<Home />} />
+             <Route path="/product" element={<Products />} />
+             <Route path="/aboutus" element={<AboutUs />} />
+             <Route path="/login" element={<LogInPage />} />
+             <Route path="/faqs" element={<Faqs />} />
+             {/* <Route path="/users" element={<Users />} /> */}
+             {/* <Route path="users/:id/" element={<UsersPage />} /> */}
+             <Route path="product/:id/" element={<ProductDetail />} />
+           </Routes>
+         </>
+         
+        ) : (
+          <LogInPage/>
+        )}
       </UserContext.Provider>
     </div>
-
-
   );
 };
 

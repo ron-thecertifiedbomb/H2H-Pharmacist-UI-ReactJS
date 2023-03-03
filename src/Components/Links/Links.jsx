@@ -3,6 +3,8 @@ import "./Links.css";
 import { UserContext } from "../../assets/UserContext/UserContext";
 import { navlinks } from "../../assets/Helper/Helprs";
 import { NavLink } from "react-router-dom";
+import LogOutButton from '../LogOutButton/LogOutButton';
+
 const Links = () => {
   const state = useContext(UserContext);
 
@@ -38,6 +40,8 @@ const Links = () => {
               state.toggleArrow === item.name ? "list_body_show" : "list_body"
             }
           >
+
+
             <div className="list_body_content">
               <NavLink to={item.linkOne}>
                 <p onClick={() => state.dispatch({ type: "off" })}>
@@ -56,9 +60,17 @@ const Links = () => {
                 </p>
               </NavLink>
             </div>
+
+
+
+
+
+
           </div>
+
         </div>
       ))}
+      <LogOutButton />
     </section>
   );
 };

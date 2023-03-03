@@ -1,21 +1,24 @@
-import React, { useContext }  from 'react'
-import './Faqs.css'
-import Header from '../../Components/Header/Header';
+import React, { useContext } from "react";
+import "./Faqs.css";
 import { UserContext } from "../../assets/UserContext/UserContext";
+import Table from "../../Components/Table/Table";
 
 const Faqs = () => {
 
   const state = useContext(UserContext);
+  
 
   return (
-
-    <section className='section_home'  onClick={() => state.dispatch({ type: 'off'})}>
-      <div>
-      <Header title={'FAQs'} />
-    </div>
-      </section>
-  )
-}
+    <section
+      className="section_home_main"
+      onClick={() => state.dispatch({ type: "off" })}
+    >
+      <Table />
 
 
-export default Faqs
+
+    </section>
+  );
+};
+
+export default Faqs;
