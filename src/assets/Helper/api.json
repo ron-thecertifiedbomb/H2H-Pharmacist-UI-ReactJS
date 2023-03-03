@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "id": 1677807521602,
+      "name": "Biogesic",
+      "generic": "Paracetamol",
+      "price": "15"
+    },
+    {
+      "id": 1677807533114,
+      "name": "Advil",
+      "generic": "Ibuprofen",
+      "price": "19"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Joe Satriani",
+      "username": "satch",
+      "employeeIdNo": 126574,
+      "password": "password123",
+      "activeUser": false
+    },
+    {
+      "id": 2,
+      "name": "Ronan Sibunga",
+      "username": "ronan",
+      "employeeIdNo": 1980,
+      "password": "1234",
+      "activeUser": false
+    },
+    {
+      "id": 3,
+      "name": "Michieko Sibunga",
+      "username": "mich",
+      "employeeIdNo": 1979,
+      "password": "Ronchiko0814",
+      "activeUser": false
+    },
+    {
+      "id": 4,
+      "name": "Kurt Wagner",
+      "username": "Nightcrawler",
+      "employeeIdNo": 6578,
+      "password": "123",
+      "activeUser": false
+    },
+    {
+      "id": 5,
+      "name": "Allen Iverson",
+      "username": "The Answer",
+      "employeeIdNo": 1977,
+      "password": "1234567",
+      "activeUser": false
+    },
+    {
+      "query": "\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ",
+      "id": 6
+    }
+  ]
+}

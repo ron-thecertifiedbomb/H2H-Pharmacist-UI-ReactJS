@@ -22,9 +22,7 @@ const Table = () => {
 
   useEffect(() => {
     fetchProducts();
-    console.log("Ronan");
   }, []);
-
 
   // POST METHOD
 
@@ -60,7 +58,14 @@ const Table = () => {
     setNewPrice("");
   };
 
+  
   // DELETE METHOD
+
+  const handleItemClick = (itemId) => {
+    setSelectedItemId(itemId);
+    deleteData(itemId);
+    console.log(itemId)
+  };
 
   const deleteData = async (itemId) => {
     const id = itemId;
@@ -85,13 +90,8 @@ const Table = () => {
       .catch((error) => console.log(error));
   };
 
-  const handleItemClick = (itemId) => {
-    setSelectedItemId(itemId);
-    deleteData(itemId);
-    console.log(itemId)
-  };
-
   return (
+
     <div className="main-wrapper">
       <div className="table_container">
         <Header title={"Over the Counter Medicine List"} />
@@ -130,6 +130,7 @@ const Table = () => {
           </tbody>
         </table>
       </div>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -153,9 +154,9 @@ const Table = () => {
           value={newPrice}
           onChange={(e) => setNewPrice(e.target.value)}
         />
-
-        <button>Add Product</button>
+        <button>Add Item</button>
       </form>
+
     </div>
   );
 };
