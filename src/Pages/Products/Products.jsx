@@ -27,6 +27,7 @@ function Products() {
   }, []);
 
   return (
+    
     <section className="products_section" onClick={() => state.dispatch({ type: 'off'})}>
     <div className="products_container">
     {product.map((item, index) => (

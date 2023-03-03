@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState, useContext } from "react";
 import './ProfileTop.css'
+import { UserContext } from "../../assets/UserContext/UserContext";
+
 
 const ProfileTop = () => {
-  
+
+  const state = useContext(UserContext);
   return (
 
  <div className='login-column'>
           <div className="log-in-wrapper">
-            <p className="log-name">Dr. Bruce Banner</p>
-            <p className="log-id">PhamAssist ID No.</p>
+            <p className="log-name">{state.activeUser[0]}</p>
+            <p className="log-id">ID No: {state.activeUser[1]}</p>
           </div>
 
           <div className="profile-wrapper">

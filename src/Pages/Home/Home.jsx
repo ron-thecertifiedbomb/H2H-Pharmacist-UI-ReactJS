@@ -3,6 +3,7 @@ import './Home.css'
 import Header from '../../Components/Header/Header';
 import { UserContext } from "../../assets/UserContext/UserContext";
 
+
 const Home = () => {
 
   const state = useContext(UserContext);
@@ -11,7 +12,7 @@ const Home = () => {
 
     <section className='section_home'  onClick={() => state.dispatch({ type: 'off'})}>
       <div>
-      <Header title={'Home'} />
+      <Header title={'Title'} />
     </div>
       </section>
   )

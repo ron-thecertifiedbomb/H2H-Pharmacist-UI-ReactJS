@@ -1,17 +1,16 @@
 import React, { useState, useReducer } from "react";
+import { UserContext } from "./assets/UserContext/UserContext";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
 import SideBar from "./Components/SideBar/SideBar";
-import { UserContext } from "./assets/UserContext/UserContext";
 import Home from "./Pages/Home/Home";
 import Products from "./Pages/Products/Products";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Faqs from "./Pages/FAQs/Faqs";
-import Users from "./Pages/Users/Users";
-import UsersPage from "./Pages/UserPage/UserPage";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import LogInPage from "./Pages/LoginPage/LoginPage";
+import LogInMultipleUser from "./Pages/LogInMulitipleUsers/LogInMultipleUser";
 
 const initialState = { toggle: false, sideBarToggle: false, isLoggedIn: false };
 
@@ -38,15 +37,16 @@ const reducer = (state, action) => {
 };
 
 const App = () => {
+  
   const [state, dispatch] = useReducer(reducer, initialState);
   const [toggleArrow, setToggleArrow] = useState("");
-  
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [activeUser, setActiveUser] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="App">
       <UserContext.Provider
-        value={{ toggleArrow, setToggleArrow, isLoggedIn, setIsLoggedIn, state, dispatch }}
+        value={{ toggleArrow, setToggleArrow, isLoggedIn, setIsLoggedIn, activeUser, setActiveUser, state, dispatch }}
       >
         {isLoggedIn ? (
            <>
@@ -60,14 +60,15 @@ const App = () => {
              <Route path="/aboutus" element={<AboutUs />} />
              <Route path="/login" element={<LogInPage />} />
              <Route path="/faqs" element={<Faqs />} />
+             <Route path="/multiple" element={<LogInMultipleUser />} />
              {/* <Route path="/users" element={<Users />} /> */}
              {/* <Route path="users/:id/" element={<UsersPage />} /> */}
              <Route path="product/:id/" element={<ProductDetail />} />
-           </Routes>
+           </Routes>  
          </>
          
         ) : (
-          <LogInPage/>
+          <LogInMultipleUser/>
         )}
       </UserContext.Provider>
     </div>
